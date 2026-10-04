@@ -9,11 +9,11 @@ import (
 )
 
 type Todo struct {
-	ID          int64
-	Title       string
-	Description pgtype.Text
-	IsCompleted bool
-	IsDeleted   bool
-	CreatedAt   pgtype.Timestamptz
-	UpdatedAt   pgtype.Timestamptz
+	ID          int64              `json:"id"`
+	Title       string             `json:"title"`
+	Description pgtype.Text        `json:"description"`
+	IsCompleted bool               `json:"is_completed"`
+	IsDeleted   bool               `json:"is_deleted"`
+	CreatedAt   pgtype.Timestamptz `json:"created_at"`
+	UpdatedAt   pgtype.Timestamptz `json:"updated_at"`
 }

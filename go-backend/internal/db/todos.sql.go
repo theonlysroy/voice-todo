@@ -74,8 +74,8 @@ SELECT id, title, description, is_completed, is_deleted, created_at, updated_at 
 `
 
 type ListTodosParams struct {
-	Limit  int32
-	Offset int32
+	Limit  int32 `json:"limit"`
+	Offset int32 `json:"offset"`
 }
 
 func (q *Queries) ListTodos(ctx context.Context, arg ListTodosParams) ([]Todo, error) {
@@ -114,9 +114,9 @@ RETURNING id, title, description, is_completed, is_deleted, created_at, updated_
 `
 
 type UpdateTodoParams struct {
-	ID          int64
-	Title       string
-	IsCompleted bool
+	ID          int64  `json:"id"`
+	Title       string `json:"title"`
+	IsCompleted bool   `json:"is_completed"`
 }
 
 func (q *Queries) UpdateTodo(ctx context.Context, arg UpdateTodoParams) (Todo, error) {
